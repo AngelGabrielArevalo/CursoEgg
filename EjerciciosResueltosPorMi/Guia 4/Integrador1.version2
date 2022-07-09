@@ -1,0 +1,90 @@
+Algoritmo Integrador1
+	Definir mat Como Caracter
+	Dimension mat(6,6)
+	cargarmatriz6x6(mat)
+	//mostrarmat(mat)
+	Si salirlaberinto(mat,4,3) Entonces
+		Escribir "si" 
+	SiNo
+		Escribir "no"
+	FinSi
+	
+FinAlgoritmo
+
+Funcion salida <- salirlaberinto(mat,i,j)
+	Definir salida Como Logico
+	Si mat(i,j)=="F" Entonces
+		salida=Verdadero
+	SiNo
+		Si mat(i,j)=="#" O mat(i,j)=="*" Entonces
+			salida=Falso
+		SiNo
+			mat(i,j)="*"
+			//marcarpaso(mat)
+			Si salirlaberinto(mat,i,j+1) Entonces
+				salida=Verdadero
+			SiNo
+				Si salirlaberinto(mat,i+1,j) Entonces
+					salida=Verdadero
+				SiNo
+					Si salirlaberinto(mat,i,j-1) Entonces
+						salida=Verdadero
+					SiNo
+						Si salirlaberinto(mat,i-1,j) Entonces
+							salida=Verdadero
+						SiNo
+							mat(i,j)=" "
+							//marcarpaso(mat)
+						FinSi
+					FinSi
+				FinSi
+			FinSi
+		FinSi
+	FinSi
+	
+FinFuncion
+
+SubProceso cargarmatriz6x6(mat)
+	Definir i, j Como Entero
+	Para i<-0 Hasta 5 Hacer
+		Para j<-0 Hasta 5 Hacer
+			Si i=0 O j=0 O i=5 O j=5 Entonces
+				mat(i,j)="#"
+			SiNo
+				mat(i,j)=" "
+			FinSi
+		FinPara
+	FinPara
+	mat(2,1)="#"
+	mat(2,3)="#"
+	mat(4,2)="#"
+	mat(4,4)="#"
+	mat(1,1)="F"
+	mat(2,2)="#"
+	mat(3,4)="#"
+
+FinSubProceso
+
+SubProceso mostrarmat(mat)
+	Definir i, j Como Entero
+	Para i<-0 Hasta 5 Hacer
+		Para j<-0 Hasta 5 Hacer
+				Escribir Sin Saltar mat(i,j)," "
+			FinPara
+			Escribir ""
+	FinPara
+FinSubProceso
+
+SubProceso marcarpaso(mat)
+	Definir i, j,k Como Entero
+	Para k<-0 Hasta 400000 Hacer
+		
+	FinPara
+	Para i<-0 Hasta 5 Hacer
+		Para j<-0 Hasta 5 Hacer
+			Escribir Sin Saltar mat(i,j)," "
+		FinPara
+		Escribir ""
+	FinPara
+FinSubProceso
+	

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="main.java.ejercicio6.entidades">
+  <ClassDiagramComponents>
+    <Class name="Alquiler" package="ejercicio6.entidades" visibility="public" xPosition="8.0" yPosition="4.0">
+      <Fields>
+        <Field name="nombreCliente" type="String" visibility="private"/>
+        <Field name="dniCiente" type="long" visibility="private"/>
+        <Field name="fechaInicial" type="Date" visibility="private"/>
+        <Field name="fechaFinal" type="Date" visibility="private"/>
+        <Field name="posicionAmarre" type="String" visibility="private"/>
+        <Field name="barco" type="Barco" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="String" name="nombreCliente"/>
+          <Argument type="long" name="dniCiente"/>
+          <Argument type="Date" name="fechaInicial"/>
+          <Argument type="Date" name="fechaFinal"/>
+          <Argument type="String" name="posicionAmarre"/>
+          <Argument type="Barco" name="barco"/>
+        </Constructor>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="Barco" package="ejercicio6.entidades" visibility="public" xPosition="175.0" yPosition="333.0">
+      <Fields>
+        <Field name="matricula" type="String" visibility="protected"/>
+        <Field name="eslora" type="int" visibility="protected"/>
+        <Field name="anioFabricacion" type="Date" visibility="protected"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="String" name="matricula"/>
+          <Argument type="int" name="eslora"/>
+          <Argument type="Date" name="anioFabricacion"/>
+        </Constructor>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="Velero" package="ejercicio6.entidades" visibility="public" xPosition="77.0" yPosition="599.0">
+      <Fields>
+        <Field name="numeroMastiles" type="int" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="int" name="numeroMastiles"/>
+          <Argument type="String" name="matricula"/>
+          <Argument type="int" name="eslora"/>
+          <Argument type="BaseCalendar.Date" name="anioFabricacion"/>
+        </Constructor>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="EmbarcacionDeportivaaMotor" package="ejercicio6.entidades" visibility="public" xPosition="694.0" yPosition="252.0">
+      <Fields>
+        <Field name="potencia" type="int" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="int" name="potencia"/>
+          <Argument type="String" name="matricula"/>
+          <Argument type="int" name="eslora"/>
+          <Argument type="BaseCalendar.Date" name="anioFabricacion"/>
+        </Constructor>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="YateDeLujo" package="ejercicio6.entidades" visibility="public" xPosition="694.0" yPosition="409.0">
+      <Fields>
+        <Field name="potencia" type="int" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="int" name="potencia"/>
+          <Argument type="String" name="matricula"/>
+          <Argument type="int" name="eslora"/>
+          <Argument type="BaseCalendar.Date" name="anioFabricacion"/>
+        </Constructor>
+      </Constructors>
+      <Methods/>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <IsRelation name="is" source="ejercicio6.entidades.EmbarcacionDeportivaaMotor" target="ejercicio6.entidades.Barco"/>
+    <HasRelation name="barco" source="ejercicio6.entidades.Alquiler" target="ejercicio6.entidades.Barco" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="ejercicio6.entidades.YateDeLujo" target="ejercicio6.entidades.Barco"/>
+    <IsRelation name="is" source="ejercicio6.entidades.Velero" target="ejercicio6.entidades.Barco"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

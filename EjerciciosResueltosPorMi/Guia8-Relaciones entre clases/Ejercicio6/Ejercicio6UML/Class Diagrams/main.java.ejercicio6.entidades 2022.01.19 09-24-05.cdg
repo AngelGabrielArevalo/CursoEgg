@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="main.java.ejercicio6.entidades">
+  <ClassDiagramComponents>
+    <Class name="Alquiler" package="ejercicio6.entidades" visibility="public" xPosition="3.0" yPosition="4.0">
+      <Fields>
+        <Field name="nombreCliente" type="String" visibility="private"/>
+        <Field name="dniCiente" type="long" visibility="private"/>
+        <Field name="calendario" type="Calendar" visibility="private"/>
+        <Field name="fechaInicial" type="Date" visibility="private"/>
+        <Field name="fechaFinal" type="Date" visibility="private"/>
+        <Field name="posicionAmarre" type="String" visibility="private"/>
+        <Field name="barco" type="Barco" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="String" name="nombreCliente"/>
+          <Argument type="long" name="dniCiente"/>
+          <Argument type="Date" name="fechaInicial"/>
+          <Argument type="Date" name="fechaFinal"/>
+          <Argument type="String" name="posicionAmarre"/>
+          <Argument type="Barco" name="barco"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="precioAlquiler" returnType="int" visibility="public"/>
+        <Method name="difereciaDias" returnType="int" visibility="private"/>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Barco" package="ejercicio6.entidades" visibility="public" xPosition="3.0" yPosition="369.0">
+      <Fields>
+        <Field name="matricula" type="String" visibility="protected"/>
+        <Field name="eslora" type="int" visibility="protected"/>
+        <Field name="anioFabricacion" type="Date" visibility="protected"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="String" name="matricula"/>
+          <Argument type="int" name="eslora"/>
+          <Argument type="Date" name="anioFabricacion"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="valorModulo" returnType="int" visibility="public"/>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="EmbarcacionDeportivaaMotor" package="ejercicio6.entidades" visibility="public" xPosition="504.0" yPosition="327.0">
+      <Fields>
+        <Field name="potencia" type="int" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="int" name="potencia"/>
+          <Argument type="String" name="matricula"/>
+          <Argument type="int" name="eslora"/>
+          <Argument type="Date" name="anioFabricacion"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="valorModulo" returnType="int" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Velero" package="ejercicio6.entidades" visibility="public" xPosition="504.0" yPosition="511.0">
+      <Fields>
+        <Field name="numeroMastiles" type="int" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="int" name="numeroMastiles"/>
+          <Argument type="String" name="matricula"/>
+          <Argument type="int" name="eslora"/>
+          <Argument type="Date" name="anioFabricacion"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="valorModulo" returnType="int" visibility="public"/>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="YateDeLujo" package="ejercicio6.entidades" visibility="public" xPosition="3.0" yPosition="604.0">
+      <Fields>
+        <Field name="potencia" type="int" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="int" name="potencia"/>
+          <Argument type="String" name="matricula"/>
+          <Argument type="int" name="eslora"/>
+          <Argument type="Date" name="anioFabricacion"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="valorModulo" returnType="int" visibility="public"/>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <IsRelation name="is" source="ejercicio6.entidades.EmbarcacionDeportivaaMotor" target="ejercicio6.entidades.Barco"/>
+    <IsRelation name="is" source="ejercicio6.entidades.YateDeLujo" target="ejercicio6.entidades.Barco"/>
+    <HasRelation name="Barco" source="ejercicio6.entidades.Alquiler" target="ejercicio6.entidades.Barco" type="Composition" sourceCardinality="0..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="ejercicio6.entidades.Velero" target="ejercicio6.entidades.Barco"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
